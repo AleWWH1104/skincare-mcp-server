@@ -1,0 +1,51 @@
+[
+  {
+    "ingredient_a": "retinol",
+    "ingredient_b": "ácido glicólico",
+    "severity": "avoid",
+    "reason": "Combinar retinol con exfoliantes AHA en la misma rutina aumenta significativamente el riesgo de irritación, sequedad y descamación.",
+    "recommendation": "Alternar noches: retinol una noche, exfoliante AHA/BHA la siguiente, nunca el mismo día."
+  },
+  {
+    "ingredient_a": "retinol",
+    "ingredient_b": "ácido salicílico",
+    "severity": "avoid",
+    "reason": "El uso conjunto de retinol y ácido salicílico (BHA) puede irritar y dañar la barrera cutánea, sobre todo en piel sensible.",
+    "recommendation": "Alternar noches o usar el ácido salicílico solo en zonas puntuales, no en toda la cara junto con retinol."
+  },
+  {
+    "ingredient_a": "tretinoína",
+    "ingredient_b": "peróxido de benzoilo",
+    "severity": "avoid",
+    "reason": "El peróxido de benzoilo puede oxidar y desactivar la tretinoína si se aplican juntos, además de aumentar la irritación.",
+    "recommendation": "Usar peróxido de benzoilo en la mañana y tretinoína en la noche, en rutinas separadas."
+  },
+  {
+    "ingredient_a": "retinol",
+    "ingredient_b": "vitamina c",
+    "severity": "caution",
+    "reason": "Ambos son activos potentes; usarlos en la misma aplicación puede irritar piel sensible y reducir la estabilidad de la vitamina C.",
+    "recommendation": "Vitamina C en la rutina de la mañana, retinol en la rutina de la noche."
+  },
+  {
+    "ingredient_a": "ácido glicólico",
+    "ingredient_b": "ácido salicílico",
+    "severity": "caution",
+    "reason": "Combinar dos exfoliantes químicos en la misma rutina puede causar sobre-exfoliación e irritación.",
+    "recommendation": "No usar el mismo día; alternar en días distintos y vigilar la respuesta de la piel."
+  },
+  {
+    "ingredient_a": "tretinoína",
+    "ingredient_b": "ácido glicólico",
+    "severity": "avoid",
+    "reason": "Dos exfoliantes/renovadores fuertes juntos (retinoide + AHA) suelen causar irritación severa y comprometer la barrera cutánea.",
+    "recommendation": "Priorizar uno de los dos activos por temporada, o alternar noches con al menos un día de descanso entre ellos."
+  },
+  {
+    "ingredient_a": "niacinamida",
+    "ingredient_b": "vitamina c",
+    "severity": "caution",
+    "reason": "Formulaciones antiguas de vitamina C podían inactivarse en presencia de niacinamida a pH alto, aunque las fórmulas modernas suelen ser estables juntas.",
+    "recommendation": "Si la piel es sensible, aplicar en rutinas separadas (AM/PM) para minimizar cualquier riesgo de irritación."
+  }
+]
