@@ -15,6 +15,7 @@ Built for the "Uso de un protocolo existente" project (CC3067 Redes, Universidad
 ## Requirements
 
 - [uv](https://docs.astral.sh/uv/) (manages the Python version and dependencies — nothing else to install manually)
+- [Docker](https://docs.docker.com/get-docker/) — only needed to run the remote (HTTP) transport in a container
 
 ## Installation
 
@@ -36,7 +37,9 @@ npx @modelcontextprotocol/inspector uv run python server.py
 
 ## Connecting it to an MCP host
 
-This server speaks MCP over **stdio**. Point your host's MCP client at:
+This server ships two transport adapters over the same tool logic (`mcp_protocol.py`) — a local one and a remote one.
+
+### Local (stdio)
 
 ```bash
 uv run --directory /absolute/path/to/skincare-mcp-server python server.py
@@ -49,6 +52,29 @@ MCPServerConfig(
     name="skincare",
     command="uv",
     args=["run", "--directory", "/absolute/path/to/skincare-mcp-server", "python", "server.py"],
+)
+```
+
+### Remote (Streamable HTTP, via Docker)
+
+`http_server.py` exposes the same tools over a single HTTP endpoint using the MCP "Streamable HTTP" transport (one `POST /mcp` per JSON-RPC message), implemented by hand with only the standard library — no MCP SDK, no web framework.
+
+Build and run the container:
+
+```bash
+docker build -t skincare-mcp-server .
+docker run --rm -p 8080:8080 skincare-mcp-server
+```
+
+The server listens on `PORT` (default `8080`), so it's ready to deploy to any container-based cloud service (Cloud Run, Fly.io, Render, etc.) that sets `PORT` for you.
+
+Example host-side config entry for the remote transport:
+
+```python
+MCPServerConfig(
+    name="skincare_remote",
+    transport="http",
+    url="http://localhost:8080/mcp",
 )
 ```
 
